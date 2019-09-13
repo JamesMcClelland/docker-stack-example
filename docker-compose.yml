@@ -2,9 +2,9 @@ version: "3"
 
 services:
   web:
-    image: webapp:latest
+    image: localhost:5000/webapp:latest
     deploy:
-      replicas: 1
+      replicas: 2
       resources:
         limits:
           cpus: "0.2"
@@ -16,9 +16,7 @@ services:
     networks:
       - webnet
   database:
-    image: webdb:latest
-    ports:
-      - "3306:3306"
+    image: localhost:5000/webdb:latest
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: "dockdeploytest"
