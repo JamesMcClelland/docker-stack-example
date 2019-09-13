@@ -10,6 +10,6 @@ $query = $dbh->query("SELECT * FROM test");
 
 $result = $query->execute();
 
-echo "Hello world!" . PHP_EOL;
+echo "Hello new swarm!" . PHP_EOL;
 
 var_dump($query->fetchAll(PDO::FETCH_ASSOC));
