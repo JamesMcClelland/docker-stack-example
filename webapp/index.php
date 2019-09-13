@@ -12,4 +12,27 @@ $result = $query->execute();
 
 echo "Hello updated swarm!" . PHP_EOL;
 
-var_dump($query->fetchAll(PDO::FETCH_ASSOC));
+$results = $query->fetchAll(PDO::FETCH_ASSOC);
+
+echo <<<HTML
+<table>
+    <thead>
+        <tr>
+            <th>Example</th>
+        </tr>
+    </thead>
+    <tbody>
+HTML;
+
+foreach ($results as $result) {
+    echo <<<HTML
+        <tr>
+            <td>{$result['example']}</td>
+        </tr>
+HTML;
+}
+
+echo <<<HTML
+    </tbody>
+</table>
+HTML;
